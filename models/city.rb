@@ -33,7 +33,7 @@ attr_accessor( :id, :name, :visited, :country_id )
 
   def find_country()
     country = Country.find(@country_id)
-    return country    
+    return country
   end
 
   def self.map_items(city_data)
@@ -41,7 +41,7 @@ attr_accessor( :id, :name, :visited, :country_id )
   end
 
   def self.all()
-    sql = "SELECT * FROM cities"
+    sql = "SELECT * FROM cities;"
     city_data = SqlRunner.run(sql)
     cities = map_items(city_data)
     return cities
@@ -49,7 +49,7 @@ attr_accessor( :id, :name, :visited, :country_id )
 
   def self.find(id)
     sql = "SELECT * FROM cities
-    WHERE id = $1"
+    WHERE id = $1;"
     values = [id]
     result = SqlRunner.run(sql, values).first
     city = City.new(result)
