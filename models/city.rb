@@ -56,6 +56,14 @@ attr_accessor( :id, :name, :visited, :country_id )
     return city
   end
 
+  def self.find_all_visited()
+    sql = "SELECT * FROM cities WHERE visited = $1;"
+    values = ["t"]
+    city_data = SqlRunner.run(sql, values)
+    visited_cities = map_items(city_data)
+    return visited_cities
+  end
+
   def self.delete_all()
     sql = "DELETE FROM cities;"
     SqlRunner.run(sql)
