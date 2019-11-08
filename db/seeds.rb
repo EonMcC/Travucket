@@ -9,8 +9,11 @@ country1 = Country.new({"name" => "Scotland", "visited" => true})
 
 country2 = Country.new({"name" => "Japan", "visited" => false})
 
+country3 = Country.new({"name" => "Canada", "visited" => true})
+
 country1.save()
 country2.save()
+country3.save()
 
 
 city1 = City.new({"name" => "Edinburgh", "visited" => true, "country_id" => country1.id})
