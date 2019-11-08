@@ -36,6 +36,12 @@ attr_accessor( :id, :name, :visited, :country_id )
     return country
   end
 
+  def toggle_visited(input)
+    sql = "UPDATE cities SET visited = $1 WHERE id = $2;"
+    values = [input, @id]
+    SqlRunner.run(sql, values)
+  end
+
   def self.map_items(city_data)
     return city_data.map { |city| City.new(city) }
   end
