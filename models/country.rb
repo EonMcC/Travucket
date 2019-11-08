@@ -66,6 +66,14 @@ attr_accessor( :id, :name, :visited )
     return visited_countries
   end
 
+  def self.find_all_not_visited()
+    sql = "SELECT * FROM countries WHERE visited = $1;"
+    values = ["f"]
+    country_data = SqlRunner.run(sql, values)
+    visited_countries = map_items(country_data)
+    return visited_countries
+  end
+
   def self.delete_all()
     sql = "DELETE FROM countries;"
     SqlRunner.run(sql)
