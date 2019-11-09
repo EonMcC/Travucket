@@ -91,6 +91,13 @@ attr_accessor( :id, :name, :visited, :country_id )
     SqlRunner.run(sql)
   end
 
+  def self.delete(id)
+    sql = "DELETE FROM cities
+    WHERE id = $1"
+    values = [id]
+    SqlRunner.run( sql, values )
+  end
+
 
 
 end
