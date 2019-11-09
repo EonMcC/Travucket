@@ -34,7 +34,12 @@ get '/add-country' do
   erb(:'countries/new')
 end
 
-post '/' do
+post '/add-country' do
   Country.new(params).save
   redirect to '/'
+end
+
+post '/delete-country/:id' do
+  Country.delete(params[:id])
+  redirect to ('/')
 end
