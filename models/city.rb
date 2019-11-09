@@ -42,6 +42,14 @@ attr_accessor( :id, :name, :visited, :country_id )
     SqlRunner.run(sql, values)
   end
 
+  def visited_string()
+    if (@visited == "t")
+      return "Yes!"
+    else
+      return "No :("
+    end
+  end
+
   def self.map_items(city_data)
     return city_data.map { |city| City.new(city) }
   end

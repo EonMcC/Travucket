@@ -1,4 +1,5 @@
 require_relative('../db/sql_runner')
+require_relative('city.rb')
 
 class Country
 
@@ -42,6 +43,14 @@ attr_accessor( :id, :name, :visited )
     sql = "UPDATE countries SET visited = $1 WHERE id = $2;"
     values = [input, @id]
     SqlRunner.run(sql, values)
+  end
+
+  def visited_string()
+    if (@visited == "t")
+      return "Yes!"
+    else
+      return "No :("
+    end
   end
 
   def self.map_items(country_data)
