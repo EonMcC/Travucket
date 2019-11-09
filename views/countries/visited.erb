@@ -2,30 +2,23 @@
 
 <div id="country-wrapper">
   <% @visited_countries.each do |country| %>
-
   <div class="country">
     <h3><%= country.name %></h3>
     <h4>Been yet? <%= country.visited_string %></h4>
     <h4>Cities</h4>
-    </div>
+  </div>
+  <ul>
+    <% @city.each do |city| %>
+    <% if city.country_id == country.id %>
+    <li><a href="/cities/<%= city.id %>"><%= city.name%></a></li>
+    <% end %>
+    <% end %>
+  </ul>
 
-
-      <ul>
-        <% @city.each do |city| %>
-        <% if city.country_id == country.id %>
-
-        <li><a href="/cities/<%= city.id %>"><%= city.name%></a></li>
-<% end %>
+  <a href="/edit/<%= country.id %>">Edit Country</a>
+  
+  <form action="/delete-country/<%=country.id%>" method="post">
+    <input type="submit" value="Delete Country"/>
+  </form>
   <% end %>
-      </ul>
-
-
-
-
-
-
-
-
-  <% end %>
-
 </div>

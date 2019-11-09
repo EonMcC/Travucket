@@ -43,3 +43,14 @@ post '/delete-country/:id' do
   Country.delete(params[:id])
   redirect to ('/')
 end
+
+get '/edit/:id' do
+  @country = Country.find(params['id'])
+  erb(:'countries/edit')
+end
+
+post '/edit/:id' do
+  country = Country.new(params)
+  country.update
+  redirect to '/'
+end
