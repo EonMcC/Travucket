@@ -13,10 +13,11 @@
     <li><a href="/cities/<%= city.id %>"><%= city.name%></a></li>
     <% end %>
     <% end %>
+    <li><a href="/add-city/<%= country.id %>">Add a city</a></li>
   </ul>
 
   <a href="/edit/<%= country.id %>">Edit Country</a>
-  
+
   <form action="/delete-country/<%=country.id%>" method="post">
     <input type="submit" value="Delete Country"/>
   </form>
