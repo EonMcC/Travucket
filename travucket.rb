@@ -29,7 +29,12 @@ get '/not-visited' do
   erb(:"countries/not-visited")
 end
 
-# get '/add-country' do
-#   @cities = City.all
-#   erb(:'countries/new')
-# end
+get '/add-country' do
+  @cities = City.all
+  erb(:'countries/new')
+end
+
+post '/' do
+  Country.new(params).save
+  redirect to '/'
+end
