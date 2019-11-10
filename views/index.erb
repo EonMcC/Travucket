@@ -6,6 +6,14 @@
   <div class="country">
     <h3><a href="/country/<%= country.id %>"><%= country.name %></a></h3>
     <h4>Been yet? <%= country.visited_string %></h4>
+    <% if (country.visited == "f") %>
+    <form action="/toggle-country-visited/<%= country.id %>/<%= country.name%>/<%= country.visited = true%>" method="post">
+      <input type="submit" value="Been!">
+      <% else %>
+      <form action="/toggle-country-visited/<%= country.id %>/<%= country.name%>/<%= country.visited = false%>" method="post">
+        <input type="submit" value="Oops, not been yet!">
+    </form>
+    <% end %>
     <h4>Cities</h4>
   </div>
   <ul>

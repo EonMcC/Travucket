@@ -87,3 +87,9 @@ post '/edit-city/:id' do
   city.update
   redirect to '/'
 end
+
+post '/toggle-country-visited/:id/:name/:visited' do
+  country = Country.new(params)
+  country.update()
+  redirect to '/'
+end
