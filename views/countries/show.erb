@@ -1,0 +1,11 @@
+<h2><%= @country.name %></h2>
+<br>
+<h3>Been yet? <%= @country.visited_string %></h3>
+
+<form action="/edit/<%=@country.id%>" method="get">
+  <input type="submit" value="Edit Country"/>
+</form>
+
+<form action="/delete-country/<%=@country.id%>" method="post">
+  <input type="submit" value="Remove Country"/>
+</form>

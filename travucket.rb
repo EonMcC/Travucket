@@ -12,6 +12,12 @@ get '/' do
   erb(:index)
 end
 
+get '/country/:id' do
+  "Hello"
+  @country = Country.find(params['id'])
+  erb(:'countries/show')
+end
+
 get '/cities/:id' do
   @city = City.find(params['id'])
   erb(:"cities/show")
