@@ -1,6 +1,14 @@
 <h2><%= @city.name %>, <%= @city.find_country.name %></h2>
 <br>
-<h3>Been yet? <%= @city.find_country.visited_string %></h3>
+<h3>Been yet? <%= @city.visited_string %></h3>
+<% if (@city.visited == "f") %>
+<form action="/toggle-city-visited/<%= @city.id %>/<%= @city.name%>/<%= @city.visited = true%>/<%= @city.country_id %>" method="post">
+  <input type="submit" value="Been!">
+  <% else %>
+  <form action="/toggle-city-visited/<%= @city.id %>/<%= @city.name%>/<%= @city.visited = false%>/<%= @city.find_country.id %>" method="post">
+    <input type="submit" value="Oops, not been yet!">
+</form>
+<% end %>
 
 <form action="/edit-city/<%=@city.id%>" method="get">
   <input type="submit" value="Edit City"/>

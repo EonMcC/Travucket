@@ -2,6 +2,15 @@
 <br>
 <h3>Been yet? <%= @country.visited_string %></h3>
 
+<% if (@country.visited == "f") %>
+<form action="/toggle-country-visited/<%= @country.id %>/<%= @country.name%>/<%= @country.visited = true%>" method="post">
+  <input type="submit" value="Been!">
+  <% else %>
+  <form action="/toggle-country-visited/<%= @country.id %>/<%= @country.name%>/<%= @country.visited = false%>" method="post">
+    <input type="submit" value="Oops, not been yet!">
+</form>
+<% end %>
+
 <form action="/edit/<%=@country.id%>" method="get">
   <input type="submit" value="Edit Country"/>
 </form>
