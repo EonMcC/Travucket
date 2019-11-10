@@ -1,6 +1,11 @@
 <h2><%= @city.name %>, <%= @city.find_country.name %></h2>
 <br>
 <h3>Been yet? <%= @city.find_country.visited_string %></h3>
+
+<form action="/edit-city/<%=@city.id%>" method="get">
+  <input type="submit" value="Edit City"/>
+</form>
+
 <form action="/delete-city/<%=@city.id%>" method="post">
   <input type="submit" value="Remove City"/>
 </form>

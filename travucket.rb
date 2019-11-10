@@ -70,3 +70,14 @@ post '/edit/:id' do
   country.update
   redirect to '/'
 end
+
+get '/edit-city/:id' do
+  @city = City.find(params['id'])
+  erb(:'cities/edit-city')
+end
+
+post '/edit-city/:id' do
+  city = City.new(params)
+  city.update
+  redirect to '/'
+end
