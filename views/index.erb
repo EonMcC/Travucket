@@ -20,14 +20,18 @@
     <% end %>
     <h4>Cities:</h4>
 
-  <ul>
+
     <% @city.each do |city| %>
     <% if city.country_id == country.id %>
-    <li><a href="/cities/<%= city.id %>"><%= city.name%></a></li>
+    <a class="city-link" href="/cities/<%= city.id %>"><%= city.name%></a>
+    <br>
     <% end %>
     <% end %>
-    <li><a href="/add-city/<%= country.id %>">Add a city</a></li>
-  </ul>
+    <a class="add-city-link" href="/add-city/<%= country.id %>">+ Add a city</a>
+    <br>
+    <br>
+    <br>
+    <br>
 
   <form action="/edit/<%=country.id%>" method="get">
     <button class="edit-button" type="submit" value="Edit Country">

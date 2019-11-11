@@ -73,11 +73,11 @@ li {
   list-style-type: none;
 }
 
-a {
-  /* color: #1B9AAA; */
-  color: white;
-  text-decoration: none;
+h4 {
+  color: #2B2B2B;
 }
+
+
 
 form {
   display: inline-block;
