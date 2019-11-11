@@ -1,10 +1,14 @@
-<h1>Welcome To Travucket!</h1>
+<body class="index">
+<h1 class="header">Welcome To Travucket!</h1>
+<hr>
 
 <div id="country-wrapper">
   <% @country.each do |country| %>
 
   <div class="country">
-    <h3><a href="/country/<%= country.id %>"><%= country.name %></a></h3>
+    <h1 class="country-title"><a href="/country/<%= country.id %>"><%= country.name %></a></h1>
+
+
     <h4>Been yet? <%= country.visited_string %></h4>
     <% if (country.visited == "f") %>
     <form action="/toggle-country-visited/<%= country.id %>/<%= country.name%>/<%= country.visited = true%>" method="post">
@@ -15,7 +19,7 @@
     </form>
     <% end %>
     <h4>Cities</h4>
-  </div>
+
   <ul>
     <% @city.each do |city| %>
     <% if city.country_id == country.id %>
@@ -32,5 +36,8 @@
   <form action="/delete-country/<%=country.id%>" method="post">
     <input type="submit" value="Remove Country"/>
   </form>
+  </div>
   <% end %>
+
 </div>
+</body>

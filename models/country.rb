@@ -3,7 +3,7 @@ require_relative('city.rb')
 
 class Country
 
-attr_accessor( :id, :name, :visited )
+attr_accessor( :id, :name, :visited)
 
   def initialize(options)
     @id = options['id'].to_i if options['id']

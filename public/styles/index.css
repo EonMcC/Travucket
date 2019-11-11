@@ -1,0 +1,76 @@
+* {
+  font-family: sans-serif;
+  box-sizing: content-box;
+
+}
+
+.index {
+/*  background-color: #1B9AAA;*/
+  margin: 0;
+  background-image: url("../images/map.jpg");
+}
+
+.country-title {
+  background-image: url("../images/japan.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 10%;
+  text-shadow: -1px -1px 0 grey, 1px -1px 0 grey, -1px 1px 0 grey, 1px 1px 0 grey;
+  opacity: 0.5;
+}
+
+.country-title:hover {
+  background-image: url("../images/japan.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 10%;
+  text-shadow: -1px -1px 0 grey, 1px -1px 0 grey, -1px 1px 0 grey, 1px 1px 0 grey;
+  opacity: 1;
+}
+
+
+.fake {
+  position: relative;
+  opacity: 0.5;
+  z-index: 5;
+  background-color: white;
+}
+
+.header {
+  text-align: center;
+  width: 100%;
+  top: 20px;
+
+}
+
+#country-wrapper {
+  right: 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  align-content: space-between;
+}
+
+.country {
+  color: #1B9AAA;
+  background-color: #F5F1E3;
+  display: inline-block;
+  width: 200px;
+  border-radius: 15px;
+  text-align: center;
+  margin: 20px;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  /* color: #1B9AAA; */
+  color: white;
+  text-decoration: none;
+}
