@@ -8,10 +8,15 @@
   margin: 0;
   background-image: url("../images/map2.jpg");
   background-size: contain;
+  background-repeat: repeat-x;
+
+  background-color: black;
+  background-position: bottom;
+
 
 }
 
-.country-title {
+ /* .country-title {
   background-image: url("../images/japan.jpg");
   background-position: center;
   background-size: cover;
@@ -19,7 +24,7 @@
   padding: 10%;
   text-shadow: -1px -1px 0 grey, 1px -1px 0 grey, -1px 1px 0 grey, 1px 1px 0 grey;
   opacity: 0.5;
-}
+} */
 
 .country-title:hover {
   background-image: url("../images/japan.jpg");
@@ -76,4 +81,9 @@ h4 {
 
 form {
   display: inline-block;
+}
+
+.country h1 {
+  position: relative;
+
 }
