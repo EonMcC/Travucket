@@ -1,0 +1,12 @@
+<h1>add photo here</h1>
+<form class="" action="/add-country-picture/<%= @country.id %>/<%= @country.name %>/<%= @country.visited %>" method="post">
+  <div>
+    <label for="picture">Add a photo to <%= @country.name %></label>
+    <input type="file" name="picture" accept="image/gif, image/jpeg, image/png">
+  </div>
+
+  <div>
+    <input type="submit" value="Save Photo"/>
+  </div>
+
+</form>

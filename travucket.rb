@@ -99,3 +99,14 @@ post '/toggle-city-visited/:id/:name/:visited/:country_id' do
   country.update()
   redirect to '/'
 end
+
+get '/add-country-picture/:id' do
+  @country = Country.find(params['id'])
+  erb(:'/countries/add-picture')
+end
+
+post '/add-country-picture/:id/:name/:visited' do
+  country = Country.new(params)
+  country.update()
+  redirect to '/'
+end

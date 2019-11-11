@@ -8,6 +8,7 @@
   <div class="country">
     <h1 class="country-title"><a href="/country/<%= country.id %>"><%= country.name %></a></h1>
 
+  
 
     <h4>Been yet? <%= country.visited_string %></h4>
     <% if (country.visited == "f") %>
@@ -15,6 +16,7 @@
       <input type="submit" value="Been!">
       <% else %>
       <form action="/toggle-country-visited/<%= country.id %>/<%= country.name%>/<%= country.visited = false%>" method="post">
+
         <input type="submit" value="Oops, not been yet!">
     </form>
     <% end %>
@@ -30,14 +32,19 @@
   </ul>
 
   <form action="/edit/<%=country.id%>" method="get">
-    <input type="submit" value="Edit Country"/>
+    <button class="edit-button" type="submit" value="Edit Country">
+      <i class="fas fa-edit"></i>
+    </button>
   </form>
 
   <form action="/delete-country/<%=country.id%>" method="post">
-    <input type="submit" value="Remove Country"/>
+
+    <button class="delete-button" type="submit" value="Remove Country">
+      <i class="fas fa-trash-alt"></i>
+      </button>
+
   </form>
   </div>
   <% end %>
-
 </div>
 </body>

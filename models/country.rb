@@ -3,12 +3,13 @@ require_relative('city.rb')
 
 class Country
 
-attr_accessor( :id, :name, :visited)
+attr_accessor( :id, :name, :visited, :picture)
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
     @visited = options['visited']
+    @picture = options['picture']
   end
 
   def save()
@@ -19,8 +20,8 @@ attr_accessor( :id, :name, :visited)
   end
 
   def update()
-    sql = "UPDATE countries SET (name, visited) = ($1, $2) WHERE id = $3;"
-    values = [@name, @visited, @id]
+    sql = "UPDATE countries SET (name, visited, picture) = ($1, $2, $3) WHERE id = $4;"
+    values = [@name, @visited, @picture, @id]
     SqlRunner.run(sql, values)
   end
 

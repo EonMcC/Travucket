@@ -1,6 +1,9 @@
+
 <h2><%= @country.name %></h2>
+
 <br>
 <h3>Been yet? <%= @country.visited_string %></h3>
+
 
 <% if (@country.visited == "f") %>
 <form action="/toggle-country-visited/<%= @country.id %>/<%= @country.name%>/<%= @country.visited = true%>" method="post">
@@ -17,4 +20,9 @@
 
 <form action="/delete-country/<%=@country.id%>" method="post">
   <input type="submit" value="Remove Country"/>
+</form>
+
+<form action="/add-country-picture/<%=@country.id%>" method="get">
+
+  <input type="submit" value="Add Picture"/>
 </form>
