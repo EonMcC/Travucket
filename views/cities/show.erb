@@ -1,14 +1,20 @@
-<h2><%= @city.name %>, <%= @city.find_country.name %></h2>
+<body class="body">
+<h1 class="header"><%= @city.name %>, <%= @city.find_country.name() %></h1>
+<hr>
+
+<h1 class="city-page-title"></h1>
 <br>
-<h3>Been yet? <%= @city.visited_string %></h3>
-<% if (@city.visited == "f") %>
-<form action="/toggle-city-visited/<%= @city.id %>/<%= @city.name%>/<%= @city.visited = true%>/<%= @city.country_id %>" method="post">
-  <input type="submit" value="Been!">
+
+<div class="city-buttons-bar">
+  <% if (@city.visited == "f") %>
+    <form action="/toggle-city-visited/<%= @city.id %>/<%= @city.name%>/<%= @city.visited = true%>/<%= @city.country_id %>" method="post">
+      <input type="submit" value="Not Been Yet">
+    </form>
   <% else %>
-  <form action="/toggle-city-visited/<%= @city.id %>/<%= @city.name%>/<%= @city.visited = false%>/<%= @city.find_country.id %>" method="post">
-    <input type="submit" value="Oops, not been yet!">
-</form>
-<% end %>
+    <form action="/toggle-city-visited/<%= @city.id %>/<%= @city.name%>/<%= @city.visited = false%>/<%= @city.find_country.id %>" method="post">
+      <input type="submit" value="Visited!">
+    </form>
+  <% end %>
 
 <form action="/edit-city/<%=@city.id%>" method="get">
   <input type="submit" value="Edit City"/>
@@ -17,3 +23,12 @@
 <form action="/delete-city/<%=@city.id%>" method="post">
   <input type="submit" value="Remove City"/>
 </form>
+
+<form action="/add-city-picture/<%= @city.id %>" method="get">
+
+  <input type="submit" value="Add Picture"/>
+</form>
+
+
+</div>
+</body>

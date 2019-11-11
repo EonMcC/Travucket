@@ -1,0 +1,13 @@
+.city-buttons-bar {
+  display: inline-flex;
+  justify-content: center;
+  height: auto;
+  top: 0;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  width: 100%;
+}
+
+input, .city-buttons-bar {
+  margin: 10px;
+}

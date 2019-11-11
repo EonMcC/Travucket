@@ -1,11 +1,9 @@
 * {
   font-family: sans-serif;
   box-sizing: content-box;
-
-
 }
 
-.index {
+.body {
 /*  background-color: #1B9AAA;*/
   margin: 0;
   background-image: url("../images/map2.jpg");
@@ -33,12 +31,12 @@
   opacity: 1;
 }
 
-
-.fake {
-  position: relative;
-  opacity: 0.5;
-  z-index: 5;
-  background-color: white;
+.country-page-title {
+  background-image: url("../images/japan.jpg");
+  background-position: center;
+  background-size: stretch;
+  background-repeat: no-repeat;
+  padding: 8%;
 }
 
 .header {
@@ -46,7 +44,6 @@
   width: 100%;
   top: 20px;
   color: white;
-
 }
 
 #country-wrapper {
@@ -69,6 +66,14 @@
   margin: 20px;
 }
 
+.sub-title {
+  text-align: center;
+  width: 100%;
+  top: 20px;
+  color: white;
+  opacity: 0.7;
+}
+
 li {
   list-style-type: none;
 }
@@ -76,8 +81,6 @@ li {
 h4 {
   color: #2B2B2B;
 }
-
-
 
 form {
   display: inline-block;

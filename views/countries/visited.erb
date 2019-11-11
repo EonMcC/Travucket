@@ -1,28 +1,51 @@
-<h1>Here is all the countries you have visited</h1>
+<body class="body">
+<h1 class="header">Countries Visited</h1>
+<h4 class="sub-title">~Countries in the bucket!~</h4>
+<hr>
 
 <div id="country-wrapper">
   <% @visited_countries.each do |country| %>
+
   <div class="country">
-    <h3><a href="/country/<%= country.id %>"><%= country.name %></a></h3>
-    <h4>Been yet? <%= country.visited_string %></h4>
-    
+    <h1 class="country-title"><a href="/country/<%= country.id %>"><%= country.name %></a></h1>
+
+    <% if (country.visited == "f") %>
+      <form action="/toggle-country-visited/<%= country.id %>/<%= country.name%>/<%= country.visited = true %>" method="post">
+        <input type="submit" value="Not Been Yet">
+      </form>
+    <% else %>
+      <form action="/toggle-country-visited/<%= country.id %>/<%= country.name%>/<%= country.visited = false%>" method="post">
+        <input type="submit" value="Visited!">
+      </form>
+    <% end %>
+
     <h4>Cities</h4>
-  </div>
-  <ul>
+
     <% @city.each do |city| %>
     <% if city.country_id == country.id %>
-    <li><a href="/cities/<%= city.id %>"><%= city.name%></a></li>
+    <a class="city-link" href="/cities/<%= city.id %>"><%= city.name%></a>
+    <br>
     <% end %>
     <% end %>
-    <li><a href="/add-city/<%= country.id %>">Add a city</a></li>
-  </ul>
+    <a class="add-city-link" href="/add-city/<%= country.id %>">+ Add a city</a>
+    <br>
+    <br>
+    <br>
+    <br>
 
   <form action="/edit/<%=country.id%>" method="get">
-    <input type="submit" value="Edit Country"/>
+    <button class="edit-button" type="submit" value="Edit Country">
+      <i class="fas fa-edit"></i>
+    </button>
   </form>
 
   <form action="/delete-country/<%=country.id%>" method="post">
-    <input type="submit" value="Delete Country"/>
+    <button class="delete-button" type="submit" value="Remove Country">
+      <i class="fas fa-trash-alt"></i>
+    </button>
   </form>
+
+  </div>
   <% end %>
 </div>
+</body>

@@ -1,18 +1,26 @@
-<h1>Add a new country</h1>
-<form action="/add-country" method="post">
-  <div>
-    <label for="name">Country Name:</label>
-    <input type="text" name="name"/>
-  </div>
+<body class="body-forms">
+<h1 class="header">Add New Country</h1>
+<h4 class="sub-title">~Enter your dream destination!~</h4>
+<hr>
+<br>
+<div class="form-wrapper">
 
-  <div>
-    <label for="visited">Have you been yet?</label>
-    <input type="radio" name="visited" value="true">Yes<br>
-    <input type="radio" name="visited" value="false">No<br>
-  </div>
+  <form action="/add-country" method="post">
+    <div>
+      <label for="name">Country Name:</label>
+      <input type="text" name="name"/>
+    </div>
 
-  <div>
-    <input type="submit" value="Add Country"/>
-  </div>
+    <div>
+      <label for="visited">Have you been yet?</label>
+      <input type="radio" name="visited" value="true">Yes</input>
+      <input type="radio" name="visited" value="false">No</input>
+      <br>
+      <br>
+    </div>
 
-</form>
+    <div>
+      <input type="submit" value="Confirm New Country Details"/>
+    </div>
+
+  </form>

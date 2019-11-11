@@ -1,17 +1,19 @@
+<body class="body">
+<h1 class="header"><%= @country.name %></h1>
+<hr>
 
-<h2><%= @country.name %></h2>
-
+<h1 class="country-page-title"></h1>
 <br>
-<h3>Been yet? <%= @country.visited_string %></h3>
 
-
-<% if (@country.visited == "f") %>
-<form action="/toggle-country-visited/<%= @country.id %>/<%= @country.name%>/<%= @country.visited = true%>" method="post">
-  <input type="submit" value="Been!">
+<div class="country-buttons-bar">
+  <% if (@country.visited == "f") %>
+    <form action="/toggle-country-visited/<%= @country.id %>/<%= @country.name%>/<%= @country.visited = true %>" method="post">
+      <input type="submit" value="Not Been Yet">
+    </form>
   <% else %>
-  <form action="/toggle-country-visited/<%= @country.id %>/<%= @country.name%>/<%= @country.visited = false%>" method="post">
-    <input type="submit" value="Oops, not been yet!">
-</form>
+    <form action="/toggle-country-visited/<%= @country.id %>/<%= @country.name%>/<%= @country.visited = false%>" method="post">
+      <input type="submit" value="Visited!">
+    </form>
 <% end %>
 
 <form action="/edit/<%=@country.id%>" method="get">
@@ -26,3 +28,6 @@
 
   <input type="submit" value="Add Picture"/>
 </form>
+</div>
+
+</body>
