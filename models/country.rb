@@ -25,6 +25,12 @@ attr_accessor( :id, :name, :visited, :picture)
     SqlRunner.run(sql, values)
   end
 
+  def update_without_pic()
+    sql = "UPDATE countries SET visited = $1 WHERE id = $2;"
+    values = [@visited, @id]
+    SqlRunner.run(sql, values)
+  end
+
   def delete()
     sql = "DELETE FROM countries
     WHERE id = $1;"
@@ -40,9 +46,9 @@ attr_accessor( :id, :name, :visited, :picture)
     return cities
   end
 
-  def toggle_visited(input)
+  def self.toggle_visited(input, id)
     sql = "UPDATE countries SET visited = $1 WHERE id = $2;"
-    values = [input, @id]
+    values = [input, id]
     SqlRunner.run(sql, values)
   end
 

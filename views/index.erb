@@ -7,21 +7,21 @@
   <% @country.each do |country| %>
 
   <div class="country">
-    <h1 style="background-image: url('<%= country.picture %>');
+    <a href="/country/<%= country.id %>"><h1 style="background-image: url('<%= country.picture %>');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     padding: 10%;
     text-shadow: -1px -1px 0 grey, 1px -1px 0 grey, -1px 1px 0 grey, 1px 1px 0 grey;
     opacity: 0.5;
-    z-index: 5;"><a href="/country/<%= country.id %>"><%= country.name %></a></h1>
+    "><%= country.name %></h1></a>
 
     <% if (country.visited == "f") %>
-      <form action="/toggle-country-visited/<%= country.id %>/<%= country.name%>/<%= country.visited = true %>" method="post">
+      <form action="/update_without_pic/<%= true %>/<%= country.id %>" method="post">
         <input type="submit" value="Not Been Yet">
       </form>
     <% else %>
-      <form action="/toggle-country-visited/<%= country.id %>/<%= country.name%>/<%= country.visited = false %>" method="post">
+      <form action="/update_without_pic/<%= false %>/<%= country.id %>" method="post">
         <input type="submit" value="Visited!">
       </form>
     <% end %>
