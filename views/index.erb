@@ -8,19 +8,17 @@
   <div class="country">
     <h1 class="country-title"><a href="/country/<%= country.id %>"><%= country.name %></a></h1>
 
-  
 
-    <h4>Been yet? <%= country.visited_string %></h4>
     <% if (country.visited == "f") %>
-    <form action="/toggle-country-visited/<%= country.id %>/<%= country.name%>/<%= country.visited = true%>" method="post">
-      <input type="submit" value="Been!">
+    <form action="/toggle-country-visited/<%= country.id %>/<%= country.name%>/<%= country.visited = true %>" method="post">
+      <input type="submit" value="Not Been Yet">
       <% else %>
       <form action="/toggle-country-visited/<%= country.id %>/<%= country.name%>/<%= country.visited = false%>" method="post">
 
-        <input type="submit" value="Oops, not been yet!">
+        <input type="submit" value="Visited!">
     </form>
     <% end %>
-    <h4>Cities</h4>
+    <h4>Cities:</h4>
 
   <ul>
     <% @city.each do |city| %>

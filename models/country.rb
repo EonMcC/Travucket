@@ -48,9 +48,17 @@ attr_accessor( :id, :name, :visited, :picture)
 
   def visited_string()
     if (@visited == "t")
-      return "Yes!"
+      return "Visited!"
     else
-      return "No :("
+      return "Not Been Yet"
+    end
+  end
+
+  def visited_string_opposite()
+    if (@visited == "f")
+      return "Visited!"
+    else
+      return "Not Been Yet"
     end
   end
 
