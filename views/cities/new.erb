@@ -1,4 +1,10 @@
-<h1>Add a new city to <%= @country.name %> </h1>
+<body class="body-forms">
+<h1 class="header">Add New City</h1>
+<h4 class="sub-title">~ Enter a city to visit in <%= @country.name %> ~</h4>
+<hr>
+<br>
+<div class="form-wrapper">
+
 <form action="/add-city" method="post">
 
   <input name='country_id' type='hidden' value='<%= @country.id %>'>
@@ -10,12 +16,14 @@
 
   <div>
     <label for="visited">Have you been yet?</label>
-    <input type="radio" name="visited" value="true">Yes<br>
-    <input type="radio" name="visited" value="false">No<br>
+    <input type="radio" name="visited" value="true">Yes</input>
+    <input type="radio" name="visited" value="false">No</input>
+    <br>
+    <br>
   </div>
 
   <div>
-    <input type="submit" value="Add City"/>
+    <input type="submit" value="Accept New City Details"/>
   </div>
 
 

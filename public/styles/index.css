@@ -31,14 +31,6 @@
   opacity: 1;
 }
 
-.country-page-title {
-  background-image: url("../images/japan.jpg");
-  background-position: center;
-  background-size: stretch;
-  background-repeat: no-repeat;
-  padding: 8%;
-}
-
 .header {
   text-align: center;
   width: 100%;

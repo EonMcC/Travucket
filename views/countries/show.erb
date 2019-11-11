@@ -1,8 +1,10 @@
-<body class="body">
+<body class="country-page">
+<img class="country-page-title" src="<%= @country.picture() %>" alt="">
 <h1 class="header"><%= @country.name %></h1>
 <hr>
 
-<h1 class="country-page-title"></h1>
+
+<!-- <h1 class="country-page-title"></h1> -->
 <br>
 
 <div class="country-buttons-bar">
@@ -14,7 +16,7 @@
     <form action="/toggle-country-visited/<%= @country.id %>/<%= @country.name%>/<%= @country.visited = false%>" method="post">
       <input type="submit" value="Visited!">
     </form>
-<% end %>
+  <% end %>
 
 <form action="/edit/<%=@country.id%>" method="get">
   <input type="submit" value="Edit Country"/>
