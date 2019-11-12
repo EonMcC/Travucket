@@ -18,7 +18,7 @@
     opacity: 0.5;
     "><%= city.name %></h1></a>
     <br>
-  
+
 
     <% if (city.visited == "f") %>
       <form action="/update_city_without_pic/<%= true %>/<%= city.country_id %>/<%= city.id %>" method="post">
@@ -33,26 +33,18 @@
     <br>
     <br>
 
-
     <form action="/edit-city/<%=city.id%>" method="get">
-      <button class="edit-button" type="submit" value="Edit City">
-        <i class="fas fa-edit"></i>
+      <button class="editicon" type="submit" value="Edit City">
       </button>
     </form>
 
     <form action="/delete-city/<%=city.id%>" method="post">
-      <button class="delete-button" type="submit" value="Delete City">
-        <i class="fas fa-trash-alt"></i>
+      <button class="trashicon" type="submit" value="Delete City">
         </button>
     </form>
     </div>
     <% end %>
   </div>
-
-
-
-
-
 
 <div class="country-buttons-bar">
   <% if (@country.visited == "f") %>
