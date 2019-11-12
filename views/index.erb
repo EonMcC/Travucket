@@ -42,11 +42,10 @@
   <div class="stars">
     <div class="star">
       <form action="/update-stars/1/<%=country.id%>" method="post">
-        <button type="submit" value="1 Star">
-          <% if (country.stars > 0) %>
-            <i class="fas fa-star"></i>
+        <% if (country.stars > 0) %>
+        <button class="staricon staricon--full" type="submit" value="4 Star">
           <% else %>
-            <i class="far fa-star"></i>
+        <button class="staricon staricon--empty" type="submit" value="1 Star">
           <% end %>
         </button>
       </form>
@@ -54,11 +53,10 @@
 
     <div class="star">
       <form action="/update-stars/2/<%=country.id%>" method="post">
-        <button type="submit" value="1 Star">
-          <% if (country.stars > 1) %>
-            <i class="fas fa-star"></i>
+        <% if (country.stars > 1) %>
+        <button class="staricon staricon--full" type="submit" value="4 Star">
           <% else %>
-            <i class="far fa-star"></i>
+        <button class="staricon staricon--empty" type="submit" value="2 Star">
           <% end %>
         </button>
       </form>
@@ -66,11 +64,10 @@
 
     <div class="star">
       <form action="/update-stars/3/<%=country.id%>" method="post">
-        <button type="submit" value="1 Star">
-          <% if (country.stars > 2) %>
-            <i class="fas fa-star"></i>
+        <% if (country.stars > 2) %>
+        <button class="staricon staricon--full" type="submit" value="4 Star">
           <% else %>
-            <i class="far fa-star"></i>
+        <button class="staricon staricon--empty" type="submit" value="3 Star">
           <% end %>
         </button>
       </form>
@@ -78,30 +75,26 @@
 
     <div class="star">
       <form action="/update-stars/4/<%=country.id%>" method="post">
-        <button type="submit" value="1 Star">
-          <% if (country.stars > 3) %>
-            <i class="fas fa-star"></i>
+        <% if (country.stars > 3) %>
+        <button class="staricon staricon--full" type="submit" value="4 Star">
           <% else %>
-            <i class="far fa-star"></i>
+        <button class="staricon staricon--empty" type="submit" value="4 Star">
           <% end %>
         </button>
       </form>
     </div>
     <div class="star">
       <form action="/update-stars/5/<%=country.id%>" method="post">
-        <button type="submit" value="1 Star">
-          <% if (country.stars > 4) %>
-            <i class="fas fa-star"></i>
+        <% if (country.stars > 4) %>
+        <button class="staricon staricon--full" type="submit" value="5 Star">
           <% else %>
-            <i class="far fa-star"></i>
+        <button class="staricon staricon--empty" type="submit" value="5 Star">
           <% end %>
         </button>
       </form>
     </div>
 
   </div>
-
-
 
 
 

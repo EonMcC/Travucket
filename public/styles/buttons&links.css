@@ -58,7 +58,21 @@ a {
   justify-content: center;
 }
 
-button {
+.staricon {
+  background-repeat: no-repeat;
+  height: 10px;
+  width: 10px;
   background: none;
   border: none;
+}
+.staricon--full {
+  background-image: url(/images/star-solid.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+
+}
+.staricon--empty {
+  background-image: url(/images/star-regular.svg);
+  background-repeat: no-repeat;
+  background-position: center;
 }
