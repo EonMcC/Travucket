@@ -64,17 +64,13 @@
   <% end %>
 
 <form action="/edit/<%=@country.id%>" method="get">
-  <input type="submit" value="Edit Country"/>
+  <input type="submit" value="Add Photo/Edit Country"/>
 </form>
 
 <form action="/delete-country/<%=@country.id%>" method="post">
   <input type="submit" value="Remove Country"/>
 </form>
 
-<form action="/add-country-picture/<%=@country.id%>" method="get">
-
-  <input type="submit" value="Add Picture for Country"/>
-</form>
 </div>
 
 </body>

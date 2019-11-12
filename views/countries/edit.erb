@@ -20,7 +20,11 @@
     <br>
   </div>
 
-  <input type="hidden" name="picture" value="<%= @country.picture %>">
+  <div>
+    <label for="picture">Enter picture URL for <%= @country.name %> (Landscape will work best) </label>
+    <br>
+    <input type="text" name="picture" value="<%=@country.picture%>"/>
+  </div>
 
   <div>
     <input type="submit" value="Apply Changes to <%= @country.name %>"/>
