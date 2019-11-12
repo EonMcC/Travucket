@@ -37,6 +37,7 @@
   <% end %>
   <br>
 
+  <% if (country.visited == "t") %>
   <div class="stars">
     <div class="star">
       <form action="/update-stars/1/<%=country.id%>" method="post">
@@ -93,12 +94,7 @@
     </div>
 
   </div>
-
-
-
-
-
-
+  <% end %>
 
   <h4>Cities:</h4>
 
@@ -112,8 +108,6 @@
   <br>
   <br>
   <br>
-
-
 
   </div>
   <% end %>
