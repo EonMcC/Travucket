@@ -16,42 +16,50 @@
     opacity: 0.5;
     "><%= country.name %></h1></a>
 
-    <% if (country.visited == "f") %>
-      <form action="/update_without_pic/<%= true %>/<%= country.id %>" method="post">
-        <input type="submit" value="Not Been Yet">
-      </form>
-    <% else %>
-      <form action="/update_without_pic/<%= false %>/<%= country.id %>" method="post">
-        <input type="submit" value="Visited!">
-      </form>
-    <% end %>
 
-    <h4>Cities:</h4>
 
-    <% @city.each do |city| %>
-      <% if city.country_id == country.id %>
-      <a class="city-link" href="/cities/<%= city.id %>"><%= city.name%></a>
-      <br>
-      <% end %>
-    <% end %>
-    <a class="add-city-link" href="/add-city/<%= country.id %>">+ Add a city</a>
-    <br>
-    <br>
-    <br>
-    <br>
 
-  <form action="/edit/<%=country.id%>" method="get">
-    <button class="edit-button" type="submit" value="Edit Country">
+
+  <form class="edit-icon" action="/edit/<%=country.id%>" method="get">
+    <button type="submit" value="Edit Country">
       <i class="fas fa-edit"></i>
     </button>
   </form>
 
-  <form action="/delete-country/<%=country.id%>" method="post">
-    <button class="delete-button" type="submit" value="Remove Country">
+  <form class="delete-icon" action="/delete-country/<%=country.id%>" method="post">
+    <button type="submit" value="Remove Country">
       <i class="fas fa-trash-alt"></i>
       </button>
   </form>
+
+
+  <% if (country.visited == "f") %>
+    <form action="/update_without_pic/<%= true %>/<%= country.id %>" method="post">
+      <input class="toggle toggle--notvisited" type="submit" value="Still to Bucket">
+    </form>
+  <% else %>
+    <form action="/update_without_pic/<%= false %>/<%= country.id %>" method="post">
+      <input class="toggle toggle--visited" type="submit" value="Bucketed!">
+    </form>
+  <% end %>
+  <br>
+
+  <h4>Cities:</h4>
+
+  <% @city.each do |city| %>
+    <% if city.country_id == country.id %>
+    <a class="city-link" href="/cities/<%= city.id %>"><%= city.name%></a>
+    <br>
+    <% end %>
+  <% end %>
+  <a class="add-city-link" href="/add-city/<%= country.id %>">+ Add a city</a>
+  <br>
+  <br>
+  <br>
+
+
+
   </div>
   <% end %>
-  </div>
-  </body>
+</div>
+</body>
