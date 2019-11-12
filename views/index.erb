@@ -6,7 +6,7 @@
 <div id="country-wrapper">
   <% @country.each do |country| %>
 
-  <div class="country">
+  <div class="country" style="order: <%= country.id %>;">
     <a href="/country/<%= country.id %>"><h1 style="background-image: url('<%= country.picture %>');
     background-position: center;
     background-size: cover;
