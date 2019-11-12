@@ -3,17 +3,15 @@
 <h1 class="header"><%= @country.name %></h1>
 <hr>
 
-
-<!-- <h1 class="country-page-title"></h1> -->
 <br>
 
 <div class="country-buttons-bar">
   <% if (@country.visited == "f") %>
-    <form action="/toggle-country-visited/<%= @country.id %>/<%= @country.name%>/<%= @country.visited = true %>" method="post">
+    <form action="/update_without_pic/<%= true %>/<%= @country.id %>" method="post">
       <input type="submit" value="Not Been Yet">
     </form>
   <% else %>
-    <form action="/toggle-country-visited/<%= @country.id %>/<%= @country.name%>/<%= @country.visited = false%>" method="post">
+    <form action="/update_without_pic/<%= false %><%= @country.id %>" method="post">
       <input type="submit" value="Visited!">
     </form>
   <% end %>
