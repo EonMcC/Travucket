@@ -44,7 +44,7 @@
 
   <% @city.each do |city| %>
     <% if city.country_id == country.id %>
-    <a class="city-link" href="/cities/<%= city.id %>"><%= city.name%></a>
+    <a class="city-link" href="/country/<%= country.id %>"><%= city.name%></a>
     <br>
     <% end %>
   <% end %>
