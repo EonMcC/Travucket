@@ -1,31 +1,38 @@
 <body class="body">
 <h1 class="header">Countries to Visit</h1>
-<h4 class="sub-title">~Still to be bucketed~</h4>
+<h4 class="sub-title">~ Still to be bucketed ~</h4>
 <hr>
 
 <div id="country-wrapper">
   <% @not_visited_countries.each do |country| %>
 
   <div class="country">
-    <h1 class="country-title"><a href="/country/<%= country.id %>"><%= country.name %></a></h1>
+    <a href="/country/<%= country.id %>"><h1 style="background-image: url('<%= country.picture %>');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 10%;
+    text-shadow: -1px -1px 0 grey, 1px -1px 0 grey, -1px 1px 0 grey, 1px 1px 0 grey;
+    opacity: 0.5;
+    "><%= country.name %></h1></a>
 
     <% if (country.visited == "f") %>
-      <form action="/toggle-country-visited/<%= country.id %>/<%= country.name%>/<%= country.visited = true %>" method="post">
+      <form action="/update_without_pic/<%= true %>/<%= country.id %>" method="post">
         <input type="submit" value="Not Been Yet">
       </form>
     <% else %>
-      <form action="/toggle-country-visited/<%= country.id %>/<%= country.name%>/<%= country.visited = false%>" method="post">
+      <form action="/update_without_pic/<%= false %>/<%= country.id %>" method="post">
         <input type="submit" value="Visited!">
       </form>
     <% end %>
 
-    <h4>Cities</h4>
+    <h4>Cities:</h4>
 
     <% @city.each do |city| %>
-    <% if city.country_id == country.id %>
-    <a class="city-link" href="/cities/<%= city.id %>"><%= city.name%></a>
-    <br>
-    <% end %>
+      <% if city.country_id == country.id %>
+      <a class="city-link" href="/cities/<%= city.id %>"><%= city.name%></a>
+      <br>
+      <% end %>
     <% end %>
     <a class="add-city-link" href="/add-city/<%= country.id %>">+ Add a city</a>
     <br>
@@ -45,6 +52,6 @@
       </button>
   </form>
   </div>
-<% end %>
-</div>
-</body>
+  <% end %>
+  </div>
+  </body>

@@ -1,14 +1,16 @@
 require_relative('../db/sql_runner')
+require_relative('country.rb')
 
 class City
 
-attr_accessor( :id, :name, :visited, :country_id )
+attr_accessor( :id, :name, :visited, :country_id, :picture )
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
     @visited = options['visited']
     @country_id = options['country_id'].to_i
+    @picture = options['picture']
   end
 
   def save()
@@ -19,8 +21,14 @@ attr_accessor( :id, :name, :visited, :country_id )
   end
 
   def update()
-    sql = "UPDATE cities SET (name, visited, country_id) = ($1, $2, $3) WHERE id = $4;"
-    values = [@name, @visited, @country_id, @id]
+    sql = "UPDATE cities SET (name, visited, country_id, picture) = ($1, $2, $3, $4) WHERE id = $5;"
+    values = [@name, @visited, @country_id, @picture, @id]
+    SqlRunner.run(sql, values)
+  end
+
+  def update_city_without_pic()
+    sql = "UPDATE cities SET visited = $1 WHERE id = $2;"
+    values = [@visited, @id]
     SqlRunner.run(sql, values)
   end
 

@@ -5,13 +5,60 @@
 
 <br>
 
+<div id="city-wrapper">
+  <% @city.each do |city| %>
+
+  <div class="city">
+    <a href="/cities/<%= city.id %>"><h1 style="background-image: url('<%= city.picture %>');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 10%;
+    text-shadow: -1px -1px 0 grey, 1px -1px 0 grey, -1px 1px 0 grey, 1px 1px 0 grey;
+    opacity: 0.5;
+    "><%= city.name %></h1></a>
+
+    <% if (city.visited == "f") %>
+      <form action="/update_city_without_pic/<%= true %>/<%= city.id %>" method="post">
+        <input type="submit" value="Not Been Yet">
+      </form>
+    <% else %>
+      <form action="/update_city_without_pic/<%= false %>/<%= city.id %>" method="post">
+        <input type="submit" value="Visited!">
+      </form>
+    <% end %>
+    <br>
+    <br>
+    <br>
+
+
+    <form action="/edit-city/<%=city.id%>" method="get">
+      <button class="edit-button" type="submit" value="Edit City">
+        <i class="fas fa-edit"></i>
+      </button>
+    </form>
+
+    <form action="/delete-city/<%=city.id%>" method="post">
+      <button class="delete-button" type="submit" value="Delete City">
+        <i class="fas fa-trash-alt"></i>
+        </button>
+    </form>
+    </div>
+    <% end %>
+  </div>
+
+
+
+
+
+
 <div class="country-buttons-bar">
   <% if (@country.visited == "f") %>
     <form action="/update_without_pic/<%= true %>/<%= @country.id %>" method="post">
       <input type="submit" value="Not Been Yet">
     </form>
   <% else %>
-    <form action="/update_without_pic/<%= false %><%= @country.id %>" method="post">
+    <form action="/update_without_pic/<%= false %>/<%= @country.id %>" method="post">
       <input type="submit" value="Visited!">
     </form>
   <% end %>
@@ -26,7 +73,7 @@
 
 <form action="/add-country-picture/<%=@country.id%>" method="get">
 
-  <input type="submit" value="Add Picture"/>
+  <input type="submit" value="Add Picture for Country"/>
 </form>
 </div>
 

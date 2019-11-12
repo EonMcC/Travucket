@@ -11,3 +11,19 @@
 input, .city-buttons-bar {
   margin: 10px;
 }
+
+.city-page {
+    text-shadow: -1px -1px 0 grey, 1px -1px 0 grey, -1px 1px 0 grey, 1px 1px 0 grey;
+}
+
+.city-page-title {
+  position: fixed;
+  display: inline;
+  background-size: stretch;
+  height: 100%;
+  width: 100%;
+  opacity: 0.4;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}

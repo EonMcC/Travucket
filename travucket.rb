@@ -13,8 +13,8 @@ get '/' do
 end
 
 get '/country/:id' do
-  "Hello"
   @country = Country.find(params['id'])
+  @city = Country.find_cities(params['id'])
   erb(:'countries/show')
 end
 
@@ -113,5 +113,16 @@ end
 post '/add-country-picture/:id/:name/:visited' do
   country = Country.new(params)
   country.update()
+  redirect to '/'
+end
+
+get '/add-city-picture/:id' do
+  @city = City.find(params['id'])
+  erb(:'/cities/add-city-picture')
+end
+
+post '/add-city-picture/:id/:name/:visited/:country_id' do
+  city = City.new(params)
+  city.update()
   redirect to '/'
 end

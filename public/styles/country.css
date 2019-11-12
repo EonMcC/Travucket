@@ -27,3 +27,23 @@
 input, .country-buttons-bar {
   margin: 10px;
 }
+
+#city-wrapper {
+  right: 0;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: center;
+  align-content: space-between;
+}
+
+.city{
+  color: #1B9AAA;
+  background-color: #F5F1E3;
+  display: inline-block;
+  width: 200px;
+  border-radius: 15px;
+  text-align: center;
+  margin: 20px;
+}

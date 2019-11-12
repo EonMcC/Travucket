@@ -46,6 +46,14 @@ attr_accessor( :id, :name, :visited, :picture)
     return cities
   end
 
+  def self.find_cities(id)
+    sql = "SELECT * FROM cities WHERE country_id = $1;"
+    values = [id]
+    result = SqlRunner.run(sql, values)
+    cities = City.map_items(result)
+    return cities
+  end
+
   def self.toggle_visited(input, id)
     sql = "UPDATE countries SET visited = $1 WHERE id = $2;"
     values = [input, id]
