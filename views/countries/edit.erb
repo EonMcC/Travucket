@@ -14,8 +14,14 @@
 
   <div>
     <label for="visited">Have you been yet?</label>
-    <input type="radio" name="visited" value="true">Yes</input>
-    <input type="radio" name="visited" value="false">No</input>
+    <input type="radio" name="visited" value="true"
+    <% if (@country.visited == "t") %>
+    checked
+    <% end %>>Yes</input>
+    <input type="radio" name="visited" value="false"
+    <% if (@country.visited == "f") %>
+     checked
+     <% end %>>No</input>
     <br>
     <br>
   </div>
