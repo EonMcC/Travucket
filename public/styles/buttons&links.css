@@ -12,3 +12,37 @@ a {
   color: #1B9AAA;
   font-size: .5rem;
 }
+
+.toggle {
+  border:0px none;
+  padding: 8px 12px;
+  color: #F5F1E3;
+  clear: both;
+}
+
+.toggle--visited {
+  background-color: #41872C;
+}
+
+.toggle--notvisited {
+  background-color: #5E1313;
+}
+
+.toggle--visited:hover {
+  background-color: #316621;
+}
+
+.toggle--notvisited:hover {
+  background-color: #7A1313;
+}
+
+.edit-icon {
+
+  float: left;
+  margin: 5px;
+}
+
+.delete-icon {
+  float: right;
+  margin: 5px;
+}
