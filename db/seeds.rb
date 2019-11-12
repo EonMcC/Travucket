@@ -7,7 +7,7 @@ Country.delete_all()
 
 country1 = Country.new({"name" => "Scotland", "visited" => true, "picture" => "https://images.spot.im/v1/production/xnpwkbzmahqkxfryfwnm"})
 country2 = Country.new({"name" => "Japan", "visited" => false, "picture" => "https://d36tnp772eyphs.cloudfront.net/blogs/1/2011/05/japan-1200x729.jpg"})
-country3 = Country.new({"name" => "Canada", "visited" => true, "picture" => "https://baronmag.ca/.image/t_share/MTU1MjcwOTc1ODU4OTQzOTk0/very-majestic-and-beautiful-landscape-with-mountains-in-banff-national-park-alberta-canada.jpg"})
+country3 = Country.new({"name" => "Canada", "visited" => true, "picture" => "http://www.americanguestusa.com/data/Image/MB-Images%20Web/Canada2.jpg?rev=B079"})
 
 country1.save()
 country2.save()
