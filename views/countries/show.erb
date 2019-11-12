@@ -8,7 +8,7 @@
 <div id="city-wrapper">
   <% @city.each do |city| %>
 
-  <div class="city">
+  <div class="city" style="order: <%= city.id %>;">
     <a class="no-click" href=""><h1 style="background-image: url('<%= city.picture %>');
     background-position: center;
     background-size: cover;
