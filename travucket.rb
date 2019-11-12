@@ -94,6 +94,18 @@ post '/update_without_pic/:visited/:id' do
   redirect to '/'
 end
 
+post '/update_without_pic_visited/:visited/:id' do
+  country = Country.new(params)
+  country.update_without_pic
+  redirect to '/visited'
+end
+
+post '/update_without_pic_notvisited/:visited/:id' do
+  country = Country.new(params)
+  country.update_without_pic
+  redirect to '/not-visited'
+end
+
 post '/toggle-country-visited/:visited/:id' do
   Country.toggle_visited(params['visited'], ['id'])
   redirect to '/'

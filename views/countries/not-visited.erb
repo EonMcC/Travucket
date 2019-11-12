@@ -34,11 +34,11 @@
 
 
   <% if (country.visited == "f") %>
-    <form action="/update_without_pic/<%= true %>/<%= country.id %>" method="post">
+    <form action="/update_without_pic_notvisited/<%= true %>/<%= country.id %>" method="post">
       <input class="toggle toggle--notvisited" type="submit" value="Still to Bucket">
     </form>
   <% else %>
-    <form action="/update_without_pic/<%= false %>/<%= country.id %>" method="post">
+    <form action="/update_without_pic_notvisited/<%= false %>/<%= country.id %>" method="post">
       <input class="toggle toggle--visited" type="submit" value="Bucketed!">
     </form>
   <% end %>

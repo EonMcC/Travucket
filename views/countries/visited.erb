@@ -16,10 +16,6 @@
     opacity: 0.5;
     "><%= country.name %></h1></a>
 
-
-
-
-
   <form class="edit-icon" action="/edit/<%=country.id%>" method="get">
     <button type="submit" value="Edit Country">
       <i class="fas fa-edit"></i>
@@ -34,11 +30,11 @@
 
 
   <% if (country.visited == "f") %>
-    <form action="/update_without_pic/<%= true %>/<%= country.id %>" method="post">
+    <form action="/update_without_pic_visited/<%= true %>/<%= country.id %>" method="post">
       <input class="toggle toggle--notvisited" type="submit" value="Still to Bucket">
     </form>
   <% else %>
-    <form action="/update_without_pic/<%= false %>/<%= country.id %>" method="post">
+    <form action="/update_without_pic_visited/<%= false %>/<%= country.id %>" method="post">
       <input class="toggle toggle--visited" type="submit" value="Bucketed!">
     </form>
   <% end %>
