@@ -46,3 +46,7 @@ a {
   float: right;
   margin: 5px;
 }
+
+.no-click {
+  cursor:default;
+}
