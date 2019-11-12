@@ -22,7 +22,7 @@ city3 = City.new({"name" => "Tokyo", "visited" => false, "country_id" => country
 
 city4 = City.new({"name" => "Kyoto", "visited" => false, "country_id" => country2.id, "picture" => "https://cdn.thecrazytourist.com/wp-content/uploads/2018/05/ccimage-shutterstock_776730046.jpg"})
 
-city5 = City.new({"name" => "Toronto", "visited" => true, "country_id" => country3.id, "picture" => "https://www.nationalgeographic.com/content/dam/travel/Guide-Pages/north-america/toronto-travel.adapt.1900.1.jpg"})
+city5 = City.new({"name" => "Toronto", "visited" => false, "country_id" => country3.id, "picture" => "https://www.nationalgeographic.com/content/dam/travel/Guide-Pages/north-america/toronto-travel.adapt.1900.1.jpg"})
 
 city6 = City.new({"name" => "Quebec City", "visited" => true, "country_id" => country3.id, "picture" => "https://img.theculturetrip.com/768x432/wp-content/uploads/2017/09/shutterstock_564217231.jpg"})
 
