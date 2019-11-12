@@ -19,11 +19,11 @@
     "><%= city.name %></h1></a>
 
     <% if (city.visited == "f") %>
-      <form action="/update_city_without_pic/<%= true %>/<%= city.id %>" method="post">
+      <form action="/update_city_without_pic/<%= true %>/<%= city.country_id %>/<%= city.id %>" method="post">
         <input class="toggle toggle--notvisited" type="submit" value="Not Been Yet">
       </form>
     <% else %>
-      <form action="/update_city_without_pic/<%= false %>/<%= city.id %>" method="post">
+      <form action="/update_city_without_pic/<%= false %>/<%= city.country_id %>/<%= city.id %>" method="post">
         <input class="toggle toggle--visited" type="submit" value="Visited!">
       </form>
     <% end %>

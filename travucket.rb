@@ -108,10 +108,10 @@ end
 
 
 
-post '/update_city_without_pic/:visited/:id' do
+post '/update_city_without_pic/:visited/:country_id/:id' do
   city = City.new(params)
   city.update_city_without_pic()
-  redirect to '/'
+  redirect to "/country/#{city.country_id}"
 end
 
 

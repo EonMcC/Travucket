@@ -27,8 +27,8 @@ attr_accessor( :id, :name, :visited, :country_id, :picture )
   end
 
   def update_city_without_pic()
-    sql = "UPDATE cities SET visited = $1 WHERE id = $2;"
-    values = [@visited, @id]
+    sql = "UPDATE cities SET (visited, country_id) = ($1, $2) WHERE id = $3;"
+    values = [@visited, @country_id, @id]
     SqlRunner.run(sql, values)
   end
 
