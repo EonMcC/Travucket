@@ -3,31 +3,38 @@ require_relative('city.rb')
 
 class Country
 
-attr_accessor( :id, :name, :visited, :picture)
+attr_accessor( :id, :name, :visited, :picture, :stars)
 
   def initialize(options)
     @id = options['id'].to_i if options['id']
     @name = options['name']
     @visited = options['visited']
     @picture = options['picture']
+    @stars = options['stars'].to_i
   end
 
   def save()
-    sql = "INSERT INTO countries (name, visited) VALUES ($1, $2) RETURNING id;"
-    values = [@name, @visited]
+    sql = "INSERT INTO countries (name, visited, picture, stars) VALUES ($1, $2, $3, $4) RETURNING id;"
+    values = [@name, @visited, @picture, @stars]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end
 
   def update()
-    sql = "UPDATE countries SET (name, visited, picture) = ($1, $2, $3) WHERE id = $4;"
-    values = [@name, @visited, @picture, @id]
+    sql = "UPDATE countries SET (name, visited, picture, stars) = ($1, $2, $3, $4) WHERE id = $5;"
+    values = [@name, @visited, @picture, @stars, @id]
     SqlRunner.run(sql, values)
   end
 
   def update_without_pic()
     sql = "UPDATE countries SET visited = $1 WHERE id = $2;"
     values = [@visited, @id]
+    SqlRunner.run(sql, values)
+  end
+
+  def update_stars(stars)
+    sql = "UPDATE countries SET stars = $1 WHERE id = $2;"
+    values = [stars, @id]
     SqlRunner.run(sql, values)
   end
 
@@ -123,9 +130,5 @@ attr_accessor( :id, :name, :visited, :picture)
     values = [id]
     SqlRunner.run( sql, values )
   end
-
-
-
-
 
 end

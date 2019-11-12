@@ -14,8 +14,8 @@ attr_accessor( :id, :name, :visited, :country_id, :picture )
   end
 
   def save()
-    sql = "INSERT INTO cities (name, visited, country_id) VALUES ($1, $2, $3) RETURNING id;"
-    values = [@name, @visited, @country_id]
+    sql = "INSERT INTO cities (name, visited, country_id, picture) VALUES ($1, $2, $3, $4) RETURNING id;"
+    values = [@name, @visited, @country_id, @picture]
     results = SqlRunner.run(sql, values)
     @id = results.first()['id'].to_i
   end

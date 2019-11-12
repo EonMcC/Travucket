@@ -148,3 +148,9 @@ post '/add-city-picture/:id/:name/:visited/:country_id' do
   city.update()
   redirect to '/'
 end
+
+post '/update-stars/:stars/:id' do
+  country = Country.find(params['id'])
+  country.update_stars(params['stars'])
+  redirect to '/'
+end

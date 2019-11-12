@@ -51,3 +51,14 @@ a {
 .no-click {
   cursor:default;
 }
+
+.stars {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+button {
+  background: none;
+  border: none;
+}
