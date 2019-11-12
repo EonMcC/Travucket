@@ -18,16 +18,11 @@
   <% end %>
 
 <form action="/edit-city/<%=@city.id%>" method="get">
-  <input type="submit" value="Edit City"/>
+  <input type="submit" value="Add Picture/Edit City"/>
 </form>
 
 <form action="/delete-city/<%=@city.id%>" method="post">
   <input type="submit" value="Remove City"/>
-</form>
-
-<form action="/add-city-picture/<%= @city.id %>" method="get">
-
-  <input type="submit" value="Add Picture"/>
 </form>
 
 

@@ -23,6 +23,12 @@
     </div>
 
     <div>
+      <label for="picture">Enter picture URL for <%= @city.name %> (Landscape will work best) </label>
+      <br>
+      <input type="text" name="picture" value="<%= @city.picture %>"/>
+    </div>
+
+    <div>
       <input type="submit" value="Apply Changes to <%= @city.name %>"/>
     </div>
 
