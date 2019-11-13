@@ -67,22 +67,6 @@ attr_accessor( :id, :name, :visited, :picture, :stars)
     SqlRunner.run(sql, values)
   end
 
-  def visited_string()
-    if (@visited == "t")
-      return "Visited!"
-    else
-      return "Not Been Yet"
-    end
-  end
-
-  def visited_string_opposite()
-    if (@visited == "f")
-      return "Visited!"
-    else
-      return "Not Been Yet"
-    end
-  end
-
   def self.map_items(country_data)
     return country_data.map { |country| Country.new(country)}
   end
