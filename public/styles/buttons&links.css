@@ -1,12 +1,10 @@
 a {
-  /* color: #1B9AAA; */
   color: white;
   text-decoration: none;
 }
 
 .city-link {
   color: #1B9AAA;
-
 }
 
 .add-city-link {
@@ -38,7 +36,6 @@ a {
 }
 
 .edit-icon {
-
   float: left;
   margin: 5px;
 }

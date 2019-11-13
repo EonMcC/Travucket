@@ -32,6 +32,8 @@
     <input type="text" name="picture"  value="<%=@country.picture%>"/>
   </div>
 
+  <input type="hidden" name="stars" value="<%= @country.stars %>">
+
   <div>
     <input type="submit" value="Apply Changes to <%= @country.name %>"/>
   </div>
