@@ -30,8 +30,18 @@
       </form>
     <% end %>
     <br>
+
+    <h4>Sights:</h4>
+    <% @sights.each do |sight| %>
+      <% if sight.city_id == city.id %>
+        <a class="city-link" href="/country/<%= @country.id %>"><%= sight.name%></a>
+        <br>
+      <% end %>
+    <% end %>
+    <a class="add-city-link" href="/add-sight/<%= city.id %>">+ Add a sight</a>
     <br>
-    <br>
+
+
 
     <form action="/edit-city/<%=city.id%>" method="get">
       <button class="editicon" type="submit" value="Edit City">

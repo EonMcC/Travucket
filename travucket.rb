@@ -4,6 +4,7 @@ require_relative('controllers/cities_controller.rb')
 require_relative('controllers/countries_controller.rb')
 require_relative('models/country')
 require_relative('models/city')
+require_relative('models/sight')
 also_reload('./models/*')
 
 get '/' do
@@ -15,6 +16,7 @@ end
 get '/country/:id' do
   @country = Country.find(params['id'])
   @city = Country.find_cities(params['id'])
+  @sights = Sight.all()
   erb(:'countries/show')
 end
 
@@ -55,6 +57,28 @@ post '/add-city' do
   City.new(params).save
   redirect to '/'
 end
+
+
+
+
+
+get '/add-sight/:id' do
+  id = (params[:id])
+  @city = City.find(id)
+  @sights = Sight.all()
+  erb(:'cities/new-sight')
+end
+
+post '/add-sight' do
+  Sight.new(params).save
+  redirect to '/'
+end
+
+
+
+
+
+
 
 post '/delete-country/:id' do
   Country.delete(params[:id])

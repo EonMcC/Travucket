@@ -16,3 +16,10 @@ CREATE TABLE cities (
   country_id INT8 REFERENCES countries(id) ON DELETE CASCADE,
   picture VARCHAR(255)
 );
+
+CREATE TABLE sights (
+  id SERIAL8 PRIMARY KEY,
+  name VARCHAR(255),
+  visited BOOLEAN NOT NULL,
+  city_id INT8 REFERENCES cities(id) ON DELETE CASCADE
+);
