@@ -11,11 +11,13 @@ country1 = Country.new({"name" => "Scotland", "visited" => true, "picture" => "h
 country2 = Country.new({"name" => "Japan", "visited" => false, "picture" => "https://d36tnp772eyphs.cloudfront.net/blogs/1/2011/05/japan-1200x729.jpg"})
 country3 = Country.new({"name" => "Canada", "visited" => true, "picture" => "http://www.americanguestusa.com/data/Image/MB-Images%20Web/Canada2.jpg?rev=B079", "stars" => "3"})
 country4 = Country.new({"name" => "USA", "visited" => true, "picture" => "https://cdn.pixabay.com/photo/2016/04/18/16/47/usa-1336898_960_720.jpg", "stars" => "4"})
+country5 = Country.new({"name" => "Malta", "visited" => false, "picture" => "https://businesstech.co.za/news/wp-content/uploads/2019/03/malta-residency-main-image.jpg"})
 
 country1.save()
 country2.save()
 country3.save()
 country4.save()
+country5.save()
 
 
 city1 = City.new({"name" => "Edinburgh", "visited" => true, "country_id" => country1.id, "picture" => "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyrQ_usAIwxUgQhsV4qhQWvkCKyutnCT_gUL2XlxyFjb4QA9HI&s"})
@@ -34,6 +36,9 @@ city7 = City.new({"name" => "New York", "visited" => true, "country_id" => count
 
 city8 = City.new({"name" => "Seattle", "visited" => false, "country_id" => country4.id, "picture" => "https://images2.minutemediacdn.com/image/upload/c_fill,g_auto,h_1248,w_2220/f_auto,q_auto,w_1100/v1555389675/shape/mentalfloss/istock_000054895092_small.jpg"})
 
+city9 = City.new({"name" => "Valletta", "visited" => false, "country_id" => country5.id, "picture" => "https://adventure.com/wp-content/uploads/2018/01/Hero-Valetta-Malta-Valletta-Waterfront-Photo-credit-Malta-Tourism-1920x1080.jpg"})
+
+
 city1.save()
 city2.save()
 city3.save()
@@ -42,6 +47,7 @@ city5.save()
 city6.save()
 city7.save()
 city8.save()
+city9.save()
 
 sight1 = Sight.new({"name" => "Edinburgh Castle", "visited" => true, "city_id" => city1.id})
 sight2 = Sight.new({"name" => "Statue of Liberty", "visited" => false, "city_id" => city7.id})
@@ -49,6 +55,7 @@ sight3 = Sight.new({"name" => "Central Park", "visited" => true, "city_id" => ci
 
 sight1.save()
 sight2.save()
+sight3.save()
 
 
 binding.pry
