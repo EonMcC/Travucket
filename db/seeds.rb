@@ -7,10 +7,10 @@ Sight.delete_all()
 City.delete_all()
 Country.delete_all()
 
-country1 = Country.new({"name" => "Scotland", "visited" => true, "picture" => "https://images.spot.im/v1/production/xnpwkbzmahqkxfryfwnm"})
+country1 = Country.new({"name" => "Scotland", "visited" => true, "picture" => "https://www.worldtravelguide.net/wp-content/uploads/2017/03/shu-Scotland-Loch-Awe-Kilchurn-Castle-513939127-1440x823.jpg", "stars" => "4"})
 country2 = Country.new({"name" => "Japan", "visited" => false, "picture" => "https://d36tnp772eyphs.cloudfront.net/blogs/1/2011/05/japan-1200x729.jpg"})
-country3 = Country.new({"name" => "Canada", "visited" => true, "picture" => "http://www.americanguestusa.com/data/Image/MB-Images%20Web/Canada2.jpg?rev=B079"})
-country4 = Country.new({"name" => "USA", "visited" => true, "picture" => "https://www.justetf.com/images/thumbnails/etf-investment-guide-map-us.jpg"})
+country3 = Country.new({"name" => "Canada", "visited" => true, "picture" => "http://www.americanguestusa.com/data/Image/MB-Images%20Web/Canada2.jpg?rev=B079", "stars" => "3"})
+country4 = Country.new({"name" => "USA", "visited" => true, "picture" => "https://cdn.pixabay.com/photo/2016/04/18/16/47/usa-1336898_960_720.jpg", "stars" => "4"})
 
 country1.save()
 country2.save()
@@ -45,6 +45,7 @@ city8.save()
 
 sight1 = Sight.new({"name" => "Edinburgh Castle", "visited" => true, "city_id" => city1.id})
 sight2 = Sight.new({"name" => "Statue of Liberty", "visited" => false, "city_id" => city7.id})
+sight3 = Sight.new({"name" => "Central Park", "visited" => true, "city_id" => city7.id})
 
 sight1.save()
 sight2.save()

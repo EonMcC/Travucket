@@ -132,15 +132,11 @@ post '/update_without_pic_notvisited/:visited/:id' do
   redirect to '/not-visited'
 end
 
-
-
 post '/update_city_without_pic/:visited/:country_id/:id' do
   city = City.new(params)
   city.update_city_without_pic()
   redirect to "/country/#{city.country_id}"
 end
-
-
 
 post '/toggle-country-visited/:visited/:id' do
   Country.toggle_visited(params['visited'], ['id'])
