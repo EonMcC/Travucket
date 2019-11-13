@@ -1,5 +1,6 @@
 require_relative('../db/sql_runner')
 require_relative('city.rb')
+require_relative('country.rb')
 
 class Sight
 
@@ -34,6 +35,11 @@ class Sight
 
   def find_city()
     city = City.find(@city_id)
+    return city
+  end
+
+  def find_country()
+    city = City.find(Country.find(@country_id))
     return city
   end
 

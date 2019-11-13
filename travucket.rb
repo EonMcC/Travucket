@@ -64,14 +64,17 @@ end
 
 get '/add-sight/:id' do
   id = (params[:id])
+
   @city = City.find(id)
+  @country = @city.find_country
   @sights = Sight.all()
   erb(:'cities/new-sight')
 end
 
-post '/add-sight' do
+post '/add-sight/:id' do
   Sight.new(params).save
-  redirect to '/'
+  country = params['id']
+  redirect to "/country/#{country}"
 end
 
 
