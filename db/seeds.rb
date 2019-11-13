@@ -3,7 +3,7 @@ require_relative('../models/city.rb')
 require_relative('../models/sight.rb')
 require("pry-byebug")
 
-# Sight.delete_all()
+Sight.delete_all()
 City.delete_all()
 Country.delete_all()
 
@@ -40,12 +40,14 @@ city3.save()
 city4.save()
 city5.save()
 city6.save()
+city7.save()
+city8.save()
 
-# sight1 = Sight.new({"name" => "Edinburgh Castle", "visited" => true, "city_id" => city1.id})
-# sight2 = Sight.new({"name" => "Statue of Liberty", "visited" => false, "city_id" => city7.id})
-#
-# sight1.save()
-# sight2.save()
+sight1 = Sight.new({"name" => "Edinburgh Castle", "visited" => true, "city_id" => city1.id})
+sight2 = Sight.new({"name" => "Statue of Liberty", "visited" => false, "city_id" => city7.id})
+
+sight1.save()
+sight2.save()
 
 
 binding.pry
