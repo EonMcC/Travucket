@@ -4,7 +4,6 @@
   background-size: contain;
   background-repeat: repeat-x;
   background-color: black;
-  background-position: bottom;
 }
 
 .header {
@@ -30,6 +29,17 @@
   border-radius: 15px;
   text-align: center;
   margin: 20px;
+}
+
+.country:hover {
+  color: #1B9AAA;
+  background-color: #F5F1E3;
+  display: inline-block;
+  width: 200px;
+  border-radius: 15px;
+  text-align: center;
+  margin: 20px;
+  transform: translateY(-10px);
 }
 
 .sub-title {
