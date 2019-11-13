@@ -58,10 +58,6 @@ post '/add-city' do
   redirect to '/'
 end
 
-
-
-
-
 get '/add-sight/:id' do
   id = (params[:id])
 
@@ -76,12 +72,6 @@ post '/add-sight/:id' do
   country = params['id']
   redirect to "/country/#{country}"
 end
-
-
-
-
-
-
 
 post '/delete-country/:id' do
   Country.delete(params[:id])
