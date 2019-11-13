@@ -1,3 +1,4 @@
+DROP TABLE sights;
 DROP TABLE cities;
 DROP TABLE countries;
 
