@@ -41,7 +41,7 @@
     <div class="star">
       <form action="/update-stars/1/<%=country.id%>" method="post">
         <% if (country.stars > 0) %>
-        <button class="staricon staricon--full" type="submit" value="4 Star">
+        <button class="staricon staricon--full" type="submit" value="1 Star">
           <% else %>
         <button class="staricon staricon--empty" type="submit" value="1 Star">
           <% end %>
@@ -52,7 +52,7 @@
     <div class="star">
       <form action="/update-stars/2/<%=country.id%>" method="post">
         <% if (country.stars > 1) %>
-        <button class="staricon staricon--full" type="submit" value="4 Star">
+        <button class="staricon staricon--full" type="submit" value="2 Star">
           <% else %>
         <button class="staricon staricon--empty" type="submit" value="2 Star">
           <% end %>
@@ -63,7 +63,7 @@
     <div class="star">
       <form action="/update-stars/3/<%=country.id%>" method="post">
         <% if (country.stars > 2) %>
-        <button class="staricon staricon--full" type="submit" value="4 Star">
+        <button class="staricon staricon--full" type="submit" value="3 Star">
           <% else %>
         <button class="staricon staricon--empty" type="submit" value="3 Star">
           <% end %>
