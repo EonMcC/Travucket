@@ -1,13 +1,3 @@
-.country-buttons-bar {
-  display: inline-flex;
-  justify-content: center;
-  height: auto;
-  top: 0;
-  font-size: 1.2rem;
-  line-height: 2rem;
-  width: 100%;
-}
-
 .country-page-background {
   position: fixed;
   display: inline;
@@ -19,10 +9,6 @@
   left: 0;
   z-index: -1;
   text-shadow: -1px -1px 0 grey, 1px -1px 0 grey, -1px 1px 0 grey, 1px 1px 0 grey;
-}
-
-input, .country-buttons-bar {
-  margin: 10px;
 }
 
 #city-wrapper {
