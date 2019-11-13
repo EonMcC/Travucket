@@ -5,10 +5,10 @@
 
 <br>
 
-<div id="city-wrapper">
+<div id="country-wrapper">
   <% @city.each do |city| %>
 
-  <div class="city" style="order: <%= city.id %>;">
+  <div class="country" style="order: <%= city.id %>;">
     <a class="no-click" href=""><h1 style="background-image: url('<%= city.picture %>');
     background-position: center;
     background-size: cover;
@@ -17,7 +17,16 @@
     text-shadow: -1px -1px 0 grey, 1px -1px 0 grey, -1px 1px 0 grey, 1px 1px 0 grey;
     opacity: 0.5;
     "><%= city.name %></h1></a>
-    <br>
+
+    <form class="edit-icon" action="/edit-city/<%=city.id%>" method="get">
+      <button class="editicon" type="submit" value="Edit City">
+      </button>
+    </form>
+
+    <form class="delete-icon" action="/delete-city/<%=city.id%>" method="post">
+      <button class="trashicon" type="submit" value="Delete City">
+        </button>
+    </form>
 
 
     <% if (city.visited == "f") %>
@@ -34,24 +43,16 @@
     <h4>Sights:</h4>
     <% @sights.each do |sight| %>
       <% if sight.city_id == city.id %>
-        <a class="city-link" href="/country/<%= @country.id %>"><%= sight.name%></a>
+        <a class="city-link" href=""><%= sight.name%></a>
+        <form class="delete-icon-sight" action="/delete-sight/<%=sight.id%>" method="post">
+          <button class="trashicon-sight" type="submit" value="Remove Country"></button>
+        </form>
         <br>
       <% end %>
     <% end %>
     <a class="add-city-link" href="/add-sight/<%= city.id %>">+ Add a sight</a>
     <br>
 
-
-
-    <form action="/edit-city/<%=city.id%>" method="get">
-      <button class="editicon" type="submit" value="Edit City">
-      </button>
-    </form>
-
-    <form action="/delete-city/<%=city.id%>" method="post">
-      <button class="trashicon" type="submit" value="Delete City">
-        </button>
-    </form>
     </div>
     <% end %>
   </div>

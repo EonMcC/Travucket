@@ -45,6 +45,10 @@ a {
   margin: 5px;
 }
 
+.delete-icon-sight {
+
+}
+
 .no-click {
   cursor:default;
 }
@@ -92,4 +96,15 @@ a {
   background-image: url(/images/trash-alt-solid.svg);
   background-repeat: no-repeat;
   background-position: center;
+}
+
+.trashicon-sight {
+  height: 5px;
+  width: 5px;
+  background: none;
+  border: none;
+  background-image: url(/images/trash-alt-solid.svg);
+  background-repeat: no-repeat;
+  background-position: center;
+  float: left
 }

@@ -80,7 +80,16 @@ end
 
 post '/delete-city/:id' do
   City.delete(params[:id])
-  redirect to ('/')
+  redirect back
+end
+
+get '/delete-sight/:id' do
+  erb(:'/delete-sight/24')
+end
+
+post '/delete-sight/:id' do
+  Sight.delete(params[:id])
+  redirect back
 end
 
 get '/edit/:id' do

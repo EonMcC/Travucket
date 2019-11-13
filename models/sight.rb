@@ -54,4 +54,11 @@ class Sight
     return sights
   end
 
+  def self.delete(id)
+    sql = "DELETE FROM sights
+    WHERE id = $1"
+    values = [id]
+    SqlRunner.run( sql, values )
+  end
+
 end
