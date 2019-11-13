@@ -116,7 +116,7 @@ attr_accessor( :id, :name, :visited, :picture, :stars)
   end
 
   def self.randomiser()
-    sql = "SELECT * FROM countries ORDER BY RANDOM();"
+    sql = "SELECT * FROM countries WHERE visited = false ORDER BY RANDOM();"
     result = SqlRunner.run(sql).first
     country = Country.new(result)
     return country

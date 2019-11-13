@@ -12,4 +12,9 @@
   line-height: 2rem;
   list-style-type: none;
   width: 100%;
+  text-shadow: -1px -1px 0 grey, 1px -1px 0 grey, -1px 1px 0 grey, 1px 1px 0 grey;
+}
+
+.nav-bar a:hover {
+  transform: translateY(2px);
 }
