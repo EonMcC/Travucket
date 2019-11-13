@@ -154,3 +154,9 @@ post '/update-stars/:stars/:id' do
   country.update_stars(params['stars'])
   redirect to '/'
 end
+
+get '/randomiser' do
+  @country = Country.randomiser()
+  @city = City.all()
+  erb(:'/randomiser')
+end

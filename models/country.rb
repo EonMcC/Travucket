@@ -131,4 +131,11 @@ attr_accessor( :id, :name, :visited, :picture, :stars)
     SqlRunner.run( sql, values )
   end
 
+  def self.randomiser()
+    sql = "SELECT * FROM countries ORDER BY RANDOM() LIMIT 1;"
+    result = SqlRunner.run(sql).first
+    country = Country.new(result)
+    return country
+  end
+
 end
