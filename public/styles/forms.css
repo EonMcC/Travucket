@@ -9,7 +9,11 @@
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
-  align-items: stretch;
+  background-color: #F5F1E3;
   justify-content: center;
   align-content: space-between;
+  padding: 50px;
+  margin-left: 350px;
+  margin-right: 350px;
+  box-shadow: 10px 10px;
 }

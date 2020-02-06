@@ -6,7 +6,7 @@ CREATE TABLE countries (
   id SERIAL8 PRIMARY KEY,
   name VARCHAR(255),
   visited BOOLEAN NOT NULL,
-  picture VARCHAR(255),
+  picture VARCHAR(400),
   stars INT4
 );
 
@@ -15,7 +15,7 @@ CREATE TABLE cities (
   name VARCHAR(255),
   visited BOOLEAN NOT NULL,
   country_id INT8 REFERENCES countries(id) ON DELETE CASCADE,
-  picture VARCHAR(255)
+  picture VARCHAR(400)
 );
 
 CREATE TABLE sights (
