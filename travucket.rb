@@ -1,11 +1,10 @@
 require('sinatra')
-require('sinatra/contrib/all')
+require('sinatra/contrib/all') if development?
 require_relative('controllers/cities_controller.rb')
 require_relative('controllers/countries_controller.rb')
 require_relative('models/country')
 require_relative('models/city')
 require_relative('models/sight')
-also_reload('./models/*')
 
 get '/' do
   @country = Country.all()

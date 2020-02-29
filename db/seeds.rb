@@ -1,7 +1,6 @@
 require_relative('../models/country.rb')
 require_relative('../models/city.rb')
 require_relative('../models/sight.rb')
-require("pry-byebug")
 
 Sight.delete_all()
 City.delete_all()
@@ -66,7 +65,3 @@ sight2.save()
 sight3.save()
 sight4.save()
 sight5.save()
-
-
-binding.pry
-nil
