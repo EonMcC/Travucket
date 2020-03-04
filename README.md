@@ -11,6 +11,9 @@ Travucket was my first attempt at a project since starting at CodeClan. The majo
 To Setup:
 Create a new PostgreSQL table called 'travucket' by typing 'createdb travucket' in terminal
 ``
+``
+Create the tables by typing 'psql -d travucket -f db/travucket.sql' from the route directory.
+``
 
 ``
 To run:
