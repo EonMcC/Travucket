@@ -1,2 +1,2 @@
-require './travucket.rb'
+require './travucket/rb'
 run Sinatra::Application
